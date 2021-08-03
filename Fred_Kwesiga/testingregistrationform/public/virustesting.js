@@ -124,6 +124,7 @@ var checkJob = () =>{
     }
     return valid
 };
+
 //validating given name
 var checkgiveName =()=>{
   let valid = false;
