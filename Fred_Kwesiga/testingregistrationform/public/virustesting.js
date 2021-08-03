@@ -101,12 +101,23 @@ var checkDob = () =>{
 //validating occupation
 var checkJob = () =>{
     let valid = false;
+    var min = 5,
+    max = 50;
+    
     var job = jobEl.value.trim();
     if (!isRequired(job)) {
       showError(jobEl, "This fill is required");
       jobEl.style.border = "1px solid red"  
-    }
-    else{
+    } else if (!isNameValid(job)) {
+    showError(jobEl, "This fill is required");
+    jobEl.style.border="1px solid red"
+    }else if (!isBetween(job.length, min, max)) {
+    showError(
+      jobEl ,
+      `Username must be between ${min} and ${max} characters.`
+    );
+    jobEl.style.border="1px solid red"
+    }else{
         showSuccess(jobEl);
         jobEl.style.border = "1px solid green"
         valid = true;
@@ -143,13 +154,21 @@ var checkgiveName =()=>{
 //validating place of residence
 var checkPor =()=>{
   let valid = false;
-  let valid = false;
   var min = 1,
     max = 20;
   var por = porEl.value.trim();
   if (!isRequired(por)) {
       showError(porEl, "This fill is required");
       porEl.style.border = "1px solid red"  
+    } else if (!isNameValid(por)) {
+    showError(porEl, "This fill is required");
+    porEl.style.border="1px solid red"
+    }else if (!isBetween(por.length, min, max)) {
+    showError(
+      porEl ,
+      `Username must be between ${min} and ${max} characters.`
+    );
+    porEl.style.border="1px solid red"
     }
     else{
         showSuccess(porEl);
