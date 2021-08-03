@@ -1,0 +1,78 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
+    link(rel='stylesheet' href='style.css' type='text/css')
+    title Ministry of Health
+  body
+        
+
+    .viruscontainer
+      img.resize(src='./images/uganda-coat_of_arms.png' alt='')
+      form.testingform(action='/' method='POST' name="registerform" id="registrationform" )
+        h3 Ministry of Health
+        h1 Covid-19 (CORONA VIRUS)
+        h2 Virus Test Registration Form
+         div
+            if alert == "success"
+                div.alert.alert-success Registration was successful !
+            if alert == "error"
+                div.alert.alert-danger Registration failed !
+        .test1
+          .formField
+            label.vtestname(for='surname') Surname
+            input.registrationform(type='names' name="firstname" id="firstname")
+            div
+                small
+          .formField  
+            label.vtestname(for='Date') Date of Birth
+            input.registrationform(type='date' name='dob' id="dob")
+            div
+                small
+          .formField   
+            label.vtestname(for='') Occupation
+            input.registrationform(type='text' name="job" id="job")
+            div
+                small
+        .test2
+          .formField
+            label.vtestname(for='surname') Given name
+            input.registrationform(type='names' name="givenname" id="givename")
+            div
+                small
+          .formField  
+            label.vtestname(for='place') Place of residence
+            input.registrationform(type='text' name='placeofreside' id="por")
+            div
+                small
+          .formField   
+            label(for='') Nationality
+            input.registrationform(type='text' name="nationality" id="nationality")
+            div
+                small
+          br
+        .test3
+          label.testgender(name="gender") Gender
+          br
+          hr
+          input(type='radio' value='Male' name="gender" id="gender" checked="checked")
+          label(for='') Male
+          input.testfemale(type='radio' value='Female' name="gender" id="gender")
+          label(for='') Female
+          br
+          .formField
+            label(for='') Category Field
+            br
+            select(name="field" id="field")
+                option(value="none" selected disabled hidden) --Select Category--
+                option Returnee
+                option Contact
+                option Alert
+                option Volunteer
+            div    
+                small 
+        button.btn.btn-primary(type='submit') Register
+    script(src='virustesting.js')
